@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ô MAM'S | Burgers & Street Food</title>
+    <title>Ô MAM'S | Burgers & Street Food Montpellier</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -14,50 +14,54 @@
         /* NAVIGATION LATERALE */
         nav {
             width: 280px; height: 100vh; background: #000; position: fixed; 
-            left: 0; top: 0; padding: 2.5rem 1.5rem; border-right: 1px solid #222;
+            left: 0; top: 0; padding: 2rem 1.5rem; border-right: 1px solid #222;
             display: flex; flex-direction: column; z-index: 1000;
         }
-        .nav-logo { width: 100%; margin-bottom: 2.5rem; }
+        .nav-logo { width: 100%; margin-bottom: 2rem; border-radius: 10px; }
         .nav-links { list-style: none; flex-grow: 1; }
-        .nav-links li { margin-bottom: 1.8rem; }
+        .nav-links li { margin-bottom: 1.2rem; }
         .nav-links a { 
-            color: #888; text-decoration: none; font-weight: 700; font-size: 1.1rem;
-            transition: 0.3s; display: flex; align-items: center; gap: 15px;
+            color: #888; text-decoration: none; font-weight: 700; font-size: 1rem;
+            transition: 0.3s; display: flex; align-items: center; gap: 12px;
         }
         .nav-links a:hover { color: var(--primary); }
         
         .btn-nav-call {
             background: var(--primary); color: #000; text-decoration: none;
             padding: 15px; border-radius: 12px; font-weight: 900; text-align: center;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 1rem;
         }
 
         /* CONTENU */
         main { margin-left: 280px; width: calc(100% - 280px); }
         section { padding: 6rem 8%; border-bottom: 1px solid #111; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
         .section-title { margin-bottom: 2.5rem; }
-        .section-title h2 { font-size: 2.8rem; text-transform: uppercase; font-weight: 900; }
+        .section-title h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; }
         .section-title span { color: var(--primary); }
         .section-title div { width: 70px; height: 5px; background: var(--primary); margin-top: 10px; }
 
         /* GRILLE BURGERS */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; }
         .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #222; }
-        .card-img { height: 200px; }
+        .card-img { height: 180px; }
         .card-img img { width: 100%; height: 100%; object-fit: cover; }
         .card-info { padding: 1.2rem; text-align: center; }
-        .card-info h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 800; }
-        .price { font-size: 1.4rem; font-weight: 900; }
+        .card-info h3 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 800; }
+        .price { font-size: 1.3rem; font-weight: 900; }
 
-        /* SECTION CARTE */
+        /* CARTE IMAGES */
         .carte-container { width: 100%; max-width: 800px; margin: 0 auto; }
         .carte-img { width: 100%; height: auto; border-radius: 15px; border: 2px solid #222; margin-bottom: 20px; display: block; }
 
+        /* MENTIONS LEGALES */
+        .legal-text { font-size: 0.85rem; color: #777; line-height: 1.6; max-width: 800px; }
+        .legal-text h4 { color: #aaa; margin: 20px 0 5px; text-transform: uppercase; font-size: 0.9rem; }
+        .insta-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+
         @media (max-width: 1024px) {
             body { flex-direction: column; }
-            nav { width: 100%; height: auto; position: sticky; padding: 1rem; border-right: none; border-bottom: 1px solid #222; flex-direction: row; justify-content: space-between; align-items: center; }
-            .nav-logo { height: 50px; width: auto; margin-bottom: 0; }
-            .nav-links, .btn-nav-call { display: none; }
+            nav { width: 100%; height: auto; position: sticky; padding: 1rem; border-right: none; border-bottom: 1px solid #222; }
+            .nav-links { display: none; }
             main { margin-left: 0; width: 100%; }
             section { min-height: auto; padding: 4rem 5%; }
         }
@@ -72,6 +76,8 @@
             <li><a href="#burgers">Nos Burgers</a></li>
             <li><a href="#carte">Ma Carte</a></li>
             <li><a href="#order">Commander</a></li>
+            <li><a href="https://www.instagram.com/omams34" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#legal" style="font-size: 0.8rem; opacity: 0.5;">Mentions Légales</a></li>
         </ul>
         <a href="tel:0745065470" class="btn-nav-call">
             <i class="fas fa-phone-alt"></i> 07 45 06 54 70
@@ -84,8 +90,8 @@
                 <h2>Qui <span>sommes-nous ?</span></h2>
                 <div></div>
             </div>
-            <p style="font-size: 1.3rem; line-height: 1.8; color: #ccc; max-width: 800px;">
-                Nous sommes deux frères passionnés par la street food. Animés par l'envie de partager notre vision du burger parfait, nous avons décidé d'ouvrir notre premier fast food <b>Ô MAM'S</b>. Nous travaillons chaque jour pour vous proposer des produits frais et généreux dans une ambiance familiale au cœur de Montpellier.
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #ccc;">
+                Nous sommes deux frères passionnés par la street food. Animés par l'envie de partager notre vision du burger parfait, nous avons ouvert <b>Ô MAM'S</b> pour offrir des produits généreux, frais et une ambiance familiale au cœur de Montpellier. Chaque recette est le fruit de notre complicité.
             </p>
         </section>
 
@@ -103,8 +109,8 @@
                 <div></div>
             </div>
             <div class="carte-container">
-                <img src="images/menu-1.jpg" alt="Menu Face 1" class="carte-img">
-                <img src="images/menu-2.jpg" alt="Menu Face 2" class="carte-img">
+                <img src="images/menu-1.jpg" alt="Menu Recto" class="carte-img">
+                <img src="images/menu-2.jpg" alt="Menu Verso" class="carte-img">
             </div>
         </section>
 
@@ -113,11 +119,36 @@
                 <h2>Commander</h2>
                 <div></div>
             </div>
-            [cite_start]<p style="font-size: 1.2rem; margin-bottom: 2rem;">Contactez-nous directement : [cite: 23]</p>
             <a href="tel:0745065470" style="font-size: clamp(2rem, 8vw, 4rem); color: var(--primary); text-decoration: none; font-weight: 900;">
-                [cite_start]07 45 06 54 70 [cite: 23]
+                07 45 06 54 70
             </a>
-            [cite_start]<p style="margin-top: 3rem; color: #666;">90 rue des Bouisses, 34070 Montpellier [cite: 38]</p>
+            <p style="margin-top: 2rem; color: #888;">
+                90 rue des Bouisses, 34070 Montpellier<br>
+                Ouvert de 11h-15h et 18h-23h (Sauf Vendredi midi)
+            </p>
+        </section>
+
+        <section id="legal" style="background: #050505; min-height: auto; padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="section-title">
+                <h2>Mentions <span>Légales</span></h2>
+                <div></div>
+            </div>
+            <div class="legal-text">
+                <h4>Éditeur du site</h4>
+                <p>Ô MAM'S Montpellier<br>Adresse : 90 rue des Bouisses, 34070 Montpellier<br>Contact : 07 45 06 54 70</p>
+                
+                <h4>Réseaux Sociaux</h4>
+                <p>Suivez-nous sur Instagram : <a href="https://www.instagram.com/omams34" target="_blank" class="insta-link">@omams34</a></p>
+
+                <h4>Horaires d'ouverture</h4>
+                <p>Du Lundi au Dimanche : 11h-15h / 18h-23h<br>Vendredi : 18h-23h uniquement</p>
+                
+                <h4>Hébergement</h4>
+                <p>Ce site est hébergé par GitHub Pages (GitHub Inc., USA).</p>
+                
+                <h4>Informations produits</h4>
+                <p>Toutes nos viandes sont certifiées Halal. Photos non contractuelles.</p>
+            </div>
         </section>
     </main>
 
