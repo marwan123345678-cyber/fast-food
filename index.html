@@ -17,7 +17,7 @@
             left: 0; top: 0; padding: 2rem 1.5rem; border-right: 1px solid #222;
             display: flex; flex-direction: column; z-index: 1000;
         }
-        .nav-logo { width: 100%; margin-bottom: 2rem; border-radius: 10px; }
+        .nav-logo { width: 100%; height: auto; margin-bottom: 2rem; border-radius: 10px; display: block; }
         .nav-links { list-style: none; flex-grow: 1; }
         .nav-links li { margin-bottom: 1.2rem; }
         .nav-links a { 
@@ -32,8 +32,8 @@
             display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 1rem;
         }
 
-        /* CONTENU */
-        main { margin-left: 280px; width: calc(100% - 280px); }
+        /* CONTENU PRINCIPAL */
+        main { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; }
         section { padding: 6rem 8%; border-bottom: 1px solid #111; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
         .section-title { margin-bottom: 2.5rem; }
         .section-title h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; }
@@ -41,29 +41,32 @@
         .section-title div { width: 70px; height: 5px; background: var(--primary); margin-top: 10px; }
 
         /* GRILLE BURGERS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; }
-        .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #222; }
-        .card-img { height: 180px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; margin-top: 20px; }
+        .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #222; transition: transform 0.3s ease; }
+        .card:hover { transform: scale(1.03); }
+        .card-img { height: 180px; background: #222; overflow: hidden; }
         .card-img img { width: 100%; height: 100%; object-fit: cover; }
         .card-info { padding: 1.2rem; text-align: center; }
         .card-info h3 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 800; }
         .price { font-size: 1.3rem; font-weight: 900; }
 
-        /* CARTE IMAGES */
+        /* CARTE (IMAGES MENU) */
         .carte-container { width: 100%; max-width: 800px; margin: 0 auto; }
         .carte-img { width: 100%; height: auto; border-radius: 15px; border: 2px solid #222; margin-bottom: 20px; display: block; }
 
         /* MENTIONS LEGALES */
         .legal-text { font-size: 0.85rem; color: #777; line-height: 1.6; max-width: 800px; }
         .legal-text h4 { color: #aaa; margin: 20px 0 5px; text-transform: uppercase; font-size: 0.9rem; }
-        .insta-link { color: var(--primary); text-decoration: none; font-weight: bold; }
 
+        /* RESPONSIVE MOBILE */
         @media (max-width: 1024px) {
             body { flex-direction: column; }
-            nav { width: 100%; height: auto; position: sticky; padding: 1rem; border-right: none; border-bottom: 1px solid #222; }
+            nav { width: 100%; height: auto; position: relative; padding: 1.5rem; border-right: none; border-bottom: 1px solid #222; }
+            .nav-logo { width: 120px; margin: 0 auto 1.5rem auto; }
             .nav-links { display: none; }
             main { margin-left: 0; width: 100%; }
-            section { min-height: auto; padding: 4rem 5%; }
+            section { min-height: auto; padding: 3rem 5%; }
+            .section-title h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -72,12 +75,11 @@
     <nav>
         <img src="images/logo-mams.pnj.jpg" alt="Ô MAM'S" class="nav-logo">
         <ul class="nav-links">
-            <li><a href="#about">Qui sommes-nous ?</a></li>
-            <li><a href="#burgers">Nos Burgers</a></li>
-            <li><a href="#carte">Ma Carte</a></li>
-            <li><a href="#order">Commander</a></li>
+            <li><a href="#about"><i class="fas fa-users"></i> Qui sommes-nous ?</a></li>
+            <li><a href="#burgers"><i class="fas fa-hamburger"></i> Nos Burgers</a></li>
+            <li><a href="#carte"><i class="fas fa-file-alt"></i> Ma Carte</a></li>
+            <li><a href="#order"><i class="fas fa-phone-alt"></i> Commander</a></li>
             <li><a href="https://www.instagram.com/omams34" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="#legal" style="font-size: 0.8rem; opacity: 0.5;">Mentions Légales</a></li>
         </ul>
         <a href="tel:0745065470" class="btn-nav-call">
             <i class="fas fa-phone-alt"></i> 07 45 06 54 70
@@ -90,8 +92,8 @@
                 <h2>Qui <span>sommes-nous ?</span></h2>
                 <div></div>
             </div>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #ccc;">
-                Nous sommes deux frères passionnés par la street food. Animés par l'envie de partager notre vision du burger parfait, nous avons ouvert <b>Ô MAM'S</b> pour offrir des produits généreux, frais et une ambiance familiale au cœur de Montpellier. Chaque recette est le fruit de notre complicité.
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #ccc;">
+                Nous sommes deux frères passionnés par la street food. Animés par l'envie de partager notre vision du burger parfait, nous avons ouvert <b>Ô MAM'S</b> pour offrir des produits généreux, frais et une ambiance familiale au cœur de Montpellier.
             </p>
         </section>
 
@@ -100,7 +102,8 @@
                 <h2>Nos <span>Burgers</span></h2>
                 <div></div>
             </div>
-            <div class="grid" id="burger-grid"></div>
+            <div class="grid" id="burger-grid">
+                </div>
         </section>
 
         <section id="carte" style="background: #080808;">
@@ -115,39 +118,28 @@
         </section>
 
         <section id="order" style="text-align: center;">
-            <div class="section-title" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="section-title" style="align-items: center; display: flex; flex-direction: column;">
                 <h2>Commander</h2>
                 <div></div>
             </div>
-            <a href="tel:0745065470" style="font-size: clamp(2rem, 8vw, 4rem); color: var(--primary); text-decoration: none; font-weight: 900;">
+            <a href="tel:0745065470" style="font-size: 2.5rem; color: var(--primary); text-decoration: none; font-weight: 900; display: block; margin: 20px 0;">
                 07 45 06 54 70
             </a>
-            <p style="margin-top: 2rem; color: #888;">
+            <p style="color: #888;">
                 90 rue des Bouisses, 34070 Montpellier<br>
-                Ouvert de 11h-15h et 18h-23h (Sauf Vendredi midi)
+                Ouvert 7j/7 (Fermé Vendredi midi)
             </p>
         </section>
 
-        <section id="legal" style="background: #050505; min-height: auto; padding-top: 4rem; padding-bottom: 4rem;">
+        <section id="legal" style="background: #050505; min-height: auto;">
             <div class="section-title">
                 <h2>Mentions <span>Légales</span></h2>
                 <div></div>
             </div>
             <div class="legal-text">
-                <h4>Éditeur du site</h4>
-                <p>Ô MAM'S Montpellier<br>Adresse : 90 rue des Bouisses, 34070 Montpellier<br>Contact : 07 45 06 54 70</p>
-                
-                <h4>Réseaux Sociaux</h4>
-                <p>Suivez-nous sur Instagram : <a href="https://www.instagram.com/omams34" target="_blank" class="insta-link">@omams34</a></p>
-
-                <h4>Horaires d'ouverture</h4>
-                <p>Du Lundi au Dimanche : 11h-15h / 18h-23h<br>Vendredi : 18h-23h uniquement</p>
-                
-                <h4>Hébergement</h4>
-                <p>Ce site est hébergé par GitHub Pages (GitHub Inc., USA).</p>
-                
-                <h4>Informations produits</h4>
-                <p>Toutes nos viandes sont certifiées Halal. Photos non contractuelles.</p>
+                <p>Ô MAM'S Montpellier - 90 rue des Bouisses, 34070 Montpellier</p>
+                <p>Instagram : @omams34 | Viandes certifiées Halal.</p>
+                <p>Hébergement : GitHub Pages.</p>
             </div>
         </section>
     </main>
@@ -164,15 +156,18 @@
             { name: "Le 360", price: "9,00€", img: "burger-8.jpg" }
         ];
 
-        document.getElementById('burger-grid').innerHTML = burgers.map(b => `
-            <div class="card">
-                <div class="card-img"><img src="images/${b.img}" alt="${b.name}"></div>
-                <div class="card-info">
-                    <h3>${b.name}</h3>
-                    <p class="price">${b.price}</p>
+        const grid = document.getElementById('burger-grid');
+        if(grid) {
+            grid.innerHTML = burgers.map(b => `
+                <div class="card">
+                    <div class="card-img"><img src="images/${b.img}" alt="${b.name}"></div>
+                    <div class="card-info">
+                        <h3>${b.name}</h3>
+                        <p class="price">${b.price}</p>
+                    </div>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
+        }
     </script>
 </body>
 </html>
