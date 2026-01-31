@@ -8,157 +8,99 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Oswald:wght@300;400;500&amp;display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #82c91e;
-            --bg-dark: #050505;
-            --border-color: rgba(255,255,255,0.08);
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: #ffffff;
-        }
-        h1, h2, h3, .font-display {
-            font-family: 'Oswald', sans-serif;
-        }
-        
-        /* Custom Scrollbar */
+        :root { --primary: #82c91e; --bg-dark: #050505; --border-color: rgba(255,255,255,0.08); }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-dark); color: #ffffff; }
+        h1, h2, h3, .font-display { font-family: 'Oswald', sans-serif; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
         ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
-
-        /* Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Glass Utility */
-        .glass {
-            background: rgba(5, 5, 5, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass { background: rgba(5, 5, 5, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
     </style>
 </head>
 <body class="antialiased selection:bg-[#82c91e] selection:text-black min-h-screen flex flex-col lg:flex-row">
 
     <header class="fixed top-0 left-0 w-full z-50 lg:hidden glass transition-all duration-300">
         <div class="flex items-center justify-between px-6 py-4">
-            <div class="font-display text-xl tracking-tight font-semibold text-white">
-                Ô MAM'S
-            </div>
+            <div class="font-display text-xl tracking-tight font-semibold text-white">Ô MAM'S</div>
             <button id="mobile-menu-btn" class="text-white hover:text-[#82c91e] transition-colors focus:outline-none p-1">
-                <iconify-icon icon="solar:hamburger-menu-linear" width="28" stroke-width="1.5"></iconify-icon>
+                <iconify-icon icon="solar:hamburger-menu-linear" width="28"></iconify-icon>
             </button>
         </div>
-        
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-white/5 shadow-2xl flex-col p-6 space-y-4">
-            <a href="#about" class="flex items-center gap-4 text-neutral-400 hover:text-[#82c91e] transition-colors text-lg font-medium py-2">
-                <iconify-icon icon="solar:history-linear" width="22"></iconify-icon> Notre Histoire
-            </a>
-            <a href="#menu" class="flex items-center gap-4 text-neutral-400 hover:text-[#82c91e] transition-colors text-lg font-medium py-2">
-                <iconify-icon icon="solar:book-2-linear" width="22"></iconify-icon> La Carte
-            </a>
-            <a href="#contact" class="flex items-center gap-4 text-neutral-400 hover:text-[#82c91e] transition-colors text-lg font-medium py-2">
-                <iconify-icon icon="solar:phone-calling-linear" width="22"></iconify-icon> Contact
-            </a>
+            <a href="#about" class="flex items-center gap-4 text-neutral-400 font-medium py-2"><iconify-icon icon="solar:history-linear" width="22"></iconify-icon> Notre Histoire</a>
+            <a href="#menu" class="flex items-center gap-4 text-neutral-400 font-medium py-2"><iconify-icon icon="solar:book-2-linear" width="22"></iconify-icon> La Carte</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+34070+Montpellier" target="_blank" class="flex items-center gap-4 text-neutral-400 font-medium py-2"><iconify-icon icon="solar:map-point-linear" width="22"></iconify-icon> Nous trouver</a>
         </div>
     </header>
 
-    <aside class="hidden lg:flex flex-col fixed top-0 left-0 h-screen w-80 bg-[#050505]/95 backdrop-blur-xl border-r border-white/5 p-8 z-40">
-        <div class="mb-10 w-full aspect-video rounded-xl overflow-hidden border border-white/5 relative group cursor-pointer">
-            <img src="images/logo-mams.pnj.jpg" alt="Ô MAM'S" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                <h1 class="font-display text-2xl font-semibold tracking-tight">Ô MAM'S</h1>
-            </div>
+    <aside class="hidden lg:flex flex-col fixed top-0 left-0 h-screen w-80 bg-[#050505] border-r border-white/5 p-8 z-40">
+        <div class="mb-10 w-full overflow-hidden flex flex-col items-center">
+            <img src="images/logo-mams.pnj.jpg" alt="Ô MAM'S" class="w-40 h-40 object-contain opacity-90 hover:opacity-100 transition-opacity duration-500">
+            <h1 class="font-display text-2xl font-semibold tracking-tight mt-4">Ô MAM'S</h1>
         </div>
 
         <nav class="flex-1 space-y-1">
-            <a href="#about" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium text-sm tracking-wide">
-                <iconify-icon icon="solar:history-linear" width="20" stroke-width="1.5" class="group-hover:text-[#82c91e] transition-colors"></iconify-icon>
-                NOTRE HISTOIRE
+            <a href="#about" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all">
+                <iconify-icon icon="solar:history-linear" width="20" class="group-hover:text-[#82c91e]"></iconify-icon> NOTRE HISTOIRE
             </a>
-            <a href="#menu" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-white bg-white/5 font-semibold text-sm tracking-wide border border-white/5 shadow-sm">
-                <iconify-icon icon="solar:book-2-linear" width="20" stroke-width="1.5" class="text-[#82c91e]"></iconify-icon>
-                LA CARTE
+            <a href="#menu" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-white bg-white/5 font-semibold border border-white/5">
+                <iconify-icon icon="solar:book-2-linear" width="20" class="text-[#82c91e]"></iconify-icon> LA CARTE
             </a>
-            <a href="#contact" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium text-sm tracking-wide">
-                <iconify-icon icon="solar:map-point-linear" width="20" stroke-width="1.5" class="group-hover:text-[#82c91e] transition-colors"></iconify-icon>
-                NOUS TROUVER
+            <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+34070+Montpellier" target="_blank" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all">
+                <iconify-icon icon="solar:map-point-linear" width="20" class="group-hover:text-[#82c91e]"></iconify-icon> NOUS TROUVER
             </a>
         </nav>
 
         <div class="mt-auto pt-6 border-t border-white/5">
-            <p class="text-[10px] text-neutral-500 mb-3 uppercase tracking-widest font-semibold pl-1">Commandes</p>
-            <a href="tel:0745065470" class="group flex items-center justify-center gap-3 w-full bg-[#82c91e] hover:bg-[#72b01a] text-black py-4 rounded-xl font-display text-xl tracking-tight font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(130,201,30,0.15)] hover:shadow-[0_0_30px_rgba(130,201,30,0.3)] hover:-translate-y-0.5">
-                <iconify-icon icon="solar:phone-calling-linear" width="24" stroke-width="1.5"></iconify-icon>
-                07 45 06 54 70
+            <a href="tel:0745065470" class="group flex items-center justify-center gap-3 w-full bg-[#82c91e] hover:bg-[#72b01a] text-black py-4 rounded-xl font-display text-xl font-semibold transition-all shadow-lg hover:-translate-y-0.5">
+                <iconify-icon icon="solar:phone-calling-linear" width="24"></iconify-icon> 07 45 06 54 70
             </a>
         </div>
     </aside>
 
     <main class="lg:ml-80 w-full min-h-screen relative bg-[#050505] pb-24 lg:pb-12">
-        <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-             <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#82c91e] rounded-full mix-blend-screen filter blur-[150px] opacity-[0.04]"></div>
-        </div>
-
         <div class="relative z-10 px-6 py-24 lg:px-12 lg:py-20 max-w-8xl mx-auto">
+            
             <div id="about" class="mb-14 reveal">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#82c91e]/20 bg-[#82c91e]/5 text-[#82c91e] text-[10px] uppercase tracking-widest font-semibold mb-4">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#82c91e]"></span>
-                    Ouvert à Montpellier
-                </div>
-                <h2 class="text-4xl lg:text-5xl font-display font-medium uppercase tracking-tight text-white">
-                    Nos <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#82c91e] to-emerald-400">Burgers</span>
-                </h2>
-                <p class="mt-4 text-neutral-400 max-w-lg text-sm leading-relaxed">
-                    Deux frères passionnés vous accueillent. Découvrez nos recettes faites maison avec des produits frais. Tous nos burgers sont disponibles seuls ou en menu.
-                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+34070+Montpellier" target="_blank" class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#82c91e]/20 bg-[#82c91e]/5 text-[#82c91e] text-[10px] uppercase tracking-widest font-semibold mb-4 hover:bg-[#82c91e]/20 transition-all">
+                    <iconify-icon icon="solar:map-point-bold"></iconify-icon>
+                    90 rue des Bouisses, Montpellier
+                </a>
+                <h2 class="text-4xl lg:text-5xl font-display font-medium uppercase text-white">Nos <span class="text-[#82c91e]">Burgers</span></h2>
+                <p class="mt-4 text-neutral-400 max-w-lg text-sm leading-relaxed">Deux frères passionnés vous accueillent. Produits frais et générosité au rendez-vous.</p>
             </div>
 
             <div id="menu" class="reveal">
-                <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
-                    </div>
+                <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6"></div>
             </div>
             
             <div class="mt-20 mb-10 reveal">
-                 <h3 class="text-2xl font-display font-medium uppercase tracking-tight text-white flex items-center gap-3">
-                    <iconify-icon icon="solar:leaf-linear" class="text-[#82c91e]"></iconify-icon>
-                    Nos Salades
+                 <h3 class="text-2xl font-display font-medium uppercase text-white flex items-center gap-3">
+                    <iconify-icon icon="solar:leaf-linear" class="text-[#82c91e]"></iconify-icon> Nos Salades
                  </h3>
                  <div class="h-px w-full bg-white/10 mt-4"></div>
             </div>
-            
-             <div id="salad-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                </div>
+             <div id="salad-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
 
-            <div class="mt-20 mb-10 reveal" id="full-menu">
-                <h3 class="text-2xl font-display font-medium uppercase tracking-tight text-white flex items-center gap-3">
-                   <iconify-icon icon="solar:file-text-linear" class="text-[#82c91e]"></iconify-icon>
-                   Menu Complet
+            <div class="mt-20 mb-10 reveal">
+                <h3 class="text-2xl font-display font-medium uppercase text-white flex items-center gap-3">
+                   <iconify-icon icon="solar:file-text-linear" class="text-[#82c91e]"></iconify-icon> Carte Complète
                 </h3>
                 <div class="h-px w-full bg-white/10 mt-4 mb-10"></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <img src="images/menu-1.jpg" alt="Menu Recto" class="w-full rounded-2xl border border-white/10 shadow-2xl">
-                    <img src="images/menu-2.jpg" alt="Menu Verso" class="w-full rounded-2xl border border-white/10 shadow-2xl">
+                    <img src="images/menu-1.jpg" alt="Menu" class="w-full rounded-2xl border border-white/10 shadow-2xl hover:scale-[1.02] transition-transform">
+                    <img src="images/menu-2.jpg" alt="Menu" class="w-full rounded-2xl border border-white/10 shadow-2xl hover:scale-[1.02] transition-transform">
                 </div>
             </div>
-
         </div>
     </main>
 
     <div class="fixed bottom-6 left-6 right-6 lg:hidden z-40">
-        <a href="tel:0745065470" class="flex items-center justify-center gap-3 w-full bg-[#82c91e] text-black py-4 rounded-xl font-display text-lg tracking-tight font-semibold shadow-2xl shadow-black/50 border border-white/10">
-            <iconify-icon icon="solar:phone-calling-linear" width="24" stroke-width="1.5"></iconify-icon>
-            COMMANDER
+        <a href="tel:0745065470" class="flex items-center justify-center gap-3 w-full bg-[#82c91e] text-black py-4 rounded-xl font-display text-lg font-semibold shadow-2xl border border-white/10">
+            <iconify-icon icon="solar:phone-calling-linear" width="24"></iconify-icon> COMMANDER
         </a>
     </div>
 
@@ -174,61 +116,45 @@
             { name: "Le 360", seul: "9,00€", menu: "11,00€", img: "images/burger-8.jpg" },
             { name: "Le Chèvre Miel", seul: "6,00€", menu: "8,00€", img: "images/burger-9.jpg" },
             { name: "Le Chicken O MAM'S", seul: "12,90€", menu: "14,90€", img: "images/burger-10.jpg" },
-            { name: "Le O MAM'S", seul: "12,90€", menu: "14,90€", img: "images/burger-11.jpg" },
+            { name: "Le O MAM'S", seul: "12,90€", menu: "14,90€", img: "images/burger-11.jpg" }
         ];
-        
-        const salads = [
-            { name: "La César", seul: "8,00€", menu: "9,00€", img: "images/salade-1.jpg" }
-        ];
+        const salads = [{ name: "La César", seul: "8,00€", menu: "9,00€", img: "images/salade-1.jpg" }];
 
-        function createCard(product, index) {
+        function createCard(p, i) {
             return `
-            <div class="group relative bg-[#0f0f0f] border border-white/5 rounded-2xl overflow-hidden hover:border-[#82c91e]/40 transition-all duration-500 reveal hover:-translate-y-1" style="transition-delay: ${index * 50}ms">
+            <div class="group relative bg-[#0f0f0f] border border-white/5 rounded-2xl overflow-hidden hover:border-[#82c91e]/40 transition-all duration-500 reveal" style="transition-delay: ${i * 50}ms">
                 <div class="h-48 w-full overflow-hidden relative">
-                    <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent opacity-90"></div>
+                    <img src="${p.img}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent"></div>
                 </div>
                 <div class="p-5 relative z-10 -mt-12">
-                    <h3 class="text-lg font-display font-medium text-white mb-4 tracking-wide group-hover:text-[#82c91e] transition-colors truncate">${product.name}</h3>
+                    <h3 class="text-lg font-display font-medium text-white mb-4 group-hover:text-[#82c91e] transition-colors">${p.name}</h3>
                     <div class="grid grid-cols-2 gap-px bg-white/5 border border-white/5 rounded-xl overflow-hidden">
-                        <div class="bg-[#141414] p-3 flex flex-col items-center justify-center hover:bg-white/5 transition-colors">
-                            <span class="text-[9px] uppercase tracking-widest text-neutral-500 font-semibold mb-1">Seul</span>
-                            <span class="text-sm font-medium text-neutral-300">${product.seul}</span>
+                        <div class="bg-[#141414] p-3 flex flex-col items-center justify-center">
+                            <span class="text-[9px] uppercase text-neutral-500 font-semibold">Seul</span>
+                            <span class="text-sm font-medium text-neutral-300">${p.seul}</span>
                         </div>
-                        <div class="bg-[#141414] p-3 flex flex-col items-center justify-center relative hover:bg-white/5 transition-colors">
-                            <div class="absolute top-0 right-0 w-2 h-2 bg-[#82c91e] rounded-bl-lg shadow-[0_0_10px_#82c91e]"></div>
-                            <span class="text-[9px] uppercase tracking-widest text-[#82c91e] font-semibold mb-1">Menu</span>
-                            <span class="text-base font-display font-medium text-white">${product.menu}</span>
+                        <div class="bg-[#141414] p-3 flex flex-col items-center justify-center">
+                            <span class="text-[9px] uppercase text-[#82c91e] font-semibold">Menu</span>
+                            <span class="text-base font-display text-white">${p.menu}</span>
                         </div>
                     </div>
                 </div>
             </div>`;
         }
-
-        const burgerContainer = document.getElementById('product-grid');
-        burgerContainer.innerHTML = burgers.map((p, i) => createCard(p, i)).join('');
-
-        const saladContainer = document.getElementById('salad-grid');
-        saladContainer.innerHTML = salads.map((p, i) => createCard(p, i)).join('');
-
+        document.getElementById('product-grid').innerHTML = burgers.map((p, i) => createCard(p, i)).join('');
+        document.getElementById('salad-grid').innerHTML = salads.map((p, i) => createCard(p, i)).join('');
+        
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = menuBtn.querySelector('iconify-icon');
-        
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('flex');
-            menuIcon.setAttribute('icon', mobileMenu.classList.contains('flex') ? 'solar:close-square-linear' : 'solar:hamburger-menu-linear');
         });
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body></html>
