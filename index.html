@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: var(--white); scroll-behavior: smooth; display: flex; }
 
-        /* NAVIGATION LATERALE */
+        /* BARRE DE NAVIGATION */
         nav {
             width: 280px; height: 100vh; background: #000; position: fixed; 
             left: 0; top: 0; padding: 2rem 1.5rem; border-right: 1px solid #222;
@@ -34,35 +34,34 @@
 
         /* CONTENU PRINCIPAL */
         main { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; }
-        section { padding: 6rem 8%; border-bottom: 1px solid #111; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        section { padding: 5rem 8%; border-bottom: 1px solid #111; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
         .section-title { margin-bottom: 2.5rem; }
         .section-title h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; }
         .section-title span { color: var(--primary); }
         .section-title div { width: 70px; height: 5px; background: var(--primary); margin-top: 10px; }
 
-        /* GRILLE BURGERS */
+        /* GRILLE DE PRODUITS */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; margin-top: 20px; }
         .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #222; transition: transform 0.3s ease; }
         .card:hover { transform: scale(1.03); }
-        .card-img { height: 180px; background: #222; overflow: hidden; }
+        .card-img { height: 200px; background: #222; overflow: hidden; }
         .card-img img { width: 100%; height: 100%; object-fit: cover; }
         .card-info { padding: 1.2rem; text-align: center; }
-        .card-info h3 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 800; }
-        .price { font-size: 1.3rem; font-weight: 900; }
+        .card-info h3 { font-size: 1rem; color: var(--white); margin-bottom: 0.8rem; text-transform: uppercase; font-weight: 800; min-height: 40px; }
+        
+        .price-box { display: flex; flex-direction: column; gap: 5px; align-items: center; }
+        .p-seul { font-size: 0.85rem; color: #888; }
+        .p-menu { font-size: 1.1rem; color: var(--primary); font-weight: 900; background: rgba(130, 201, 30, 0.1); padding: 4px 12px; border-radius: 6px; border: 1px solid rgba(130, 201, 30, 0.2); }
 
-        /* CARTE (IMAGES MENU) */
+        /* IMAGES DE LA CARTE */
         .carte-container { width: 100%; max-width: 800px; margin: 0 auto; }
         .carte-img { width: 100%; height: auto; border-radius: 15px; border: 2px solid #222; margin-bottom: 20px; display: block; }
 
-        /* MENTIONS LEGALES */
-        .legal-text { font-size: 0.85rem; color: #777; line-height: 1.6; max-width: 800px; }
-        .legal-text h4 { color: #aaa; margin: 20px 0 5px; text-transform: uppercase; font-size: 0.9rem; }
-
-        /* RESPONSIVE MOBILE */
+        /* RESPONSIVE SMARTPHONE */
         @media (max-width: 1024px) {
             body { flex-direction: column; }
             nav { width: 100%; height: auto; position: relative; padding: 1.5rem; border-right: none; border-bottom: 1px solid #222; }
-            .nav-logo { width: 120px; margin: 0 auto 1.5rem auto; }
+            .nav-logo { width: 100px; margin: 0 auto 1.5rem auto; }
             .nav-links { display: none; }
             main { margin-left: 0; width: 100%; }
             section { min-height: auto; padding: 3rem 5%; }
@@ -75,10 +74,10 @@
     <nav>
         <img src="images/logo-mams.pnj.jpg" alt="Ô MAM'S" class="nav-logo">
         <ul class="nav-links">
-            <li><a href="#about"><i class="fas fa-users"></i> Qui sommes-nous ?</a></li>
-            <li><a href="#burgers"><i class="fas fa-hamburger"></i> Nos Burgers</a></li>
-            <li><a href="#carte"><i class="fas fa-file-alt"></i> Ma Carte</a></li>
-            <li><a href="#order"><i class="fas fa-phone-alt"></i> Commander</a></li>
+            <li><a href="#about"><i class="fas fa-users"></i> L'Équipe</a></li>
+            <li><a href="#menu"><i class="fas fa-hamburger"></i> Nos Plats</a></li>
+            <li><a href="#full-menu"><i class="fas fa-file-alt"></i> Carte Complète</a></li>
+            <li><a href="#order"><i class="fas fa-phone-alt"></i> Contact</a></li>
             <li><a href="https://www.instagram.com/omams34" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
         </ul>
         <a href="tel:0745065470" class="btn-nav-call">
@@ -97,18 +96,17 @@
             </p>
         </section>
 
-        <section id="burgers">
+        <section id="menu">
             <div class="section-title">
-                <h2>Nos <span>Burgers</span></h2>
+                <h2>Nos <span>Plats</span></h2>
                 <div></div>
             </div>
-            <div class="grid" id="burger-grid">
-                </div>
+            <div class="grid" id="product-grid"></div>
         </section>
 
-        <section id="carte" style="background: #080808;">
+        <section id="full-menu" style="background: #080808;">
             <div class="section-title">
-                <h2>Ma <span>Carte</span></h2>
+                <h2>Carte <span>Papier</span></h2>
                 <div></div>
             </div>
             <div class="carte-container">
@@ -122,48 +120,41 @@
                 <h2>Commander</h2>
                 <div></div>
             </div>
-            <a href="tel:0745065470" style="font-size: 2.5rem; color: var(--primary); text-decoration: none; font-weight: 900; display: block; margin: 20px 0;">
+            <p style="margin-bottom: 10px;">Cliquez pour nous appeler :</p>
+            <a href="tel:0745065470" style="font-size: 2.5rem; color: var(--primary); text-decoration: none; font-weight: 900; display: block; margin-bottom: 20px;">
                 07 45 06 54 70
             </a>
-            <p style="color: #888;">
-                90 rue des Bouisses, 34070 Montpellier<br>
-                Ouvert 7j/7 (Fermé Vendredi midi)
-            </p>
-        </section>
-
-        <section id="legal" style="background: #050505; min-height: auto;">
-            <div class="section-title">
-                <h2>Mentions <span>Légales</span></h2>
-                <div></div>
-            </div>
-            <div class="legal-text">
-                <p>Ô MAM'S Montpellier - 90 rue des Bouisses, 34070 Montpellier</p>
-                <p>Instagram : @omams34 | Viandes certifiées Halal.</p>
-                <p>Hébergement : GitHub Pages.</p>
-            </div>
+            <p style="color: #888;">90 rue des Bouisses, 34070 Montpellier</p>
         </section>
     </main>
 
     <script>
-        const burgers = [
-            { name: "Cheese Burger", price: "3,50€", img: "burger-1.jpg" },
-            { name: "Double Cheese Burger", price: "4,50€", img: "burger-2.jpg" },
-            { name: "Triple Cheese Burger", price: "5,50€", img: "burger-3.jpg" },
-            { name: "Le Big", price: "6,00€", img: "burger-4.jpg" },
-            { name: "Le Giant Maax", price: "6,00€", img: "burger-5.jpg" },
-            { name: "Le Giant", price: "5,00€", img: "burger-6.jpg" },
-            { name: "Le 180", price: "7,00€", img: "burger-7.jpg" },
-            { name: "Le 360", price: "9,00€", img: "burger-8.jpg" }
+        const products = [
+            { name: "Cheese Burger", seul: "3,50€", menu: "6,50€", img: "burger-1.jpg" },
+            { name: "Double Cheese", seul: "4,50€", menu: "7,50€", img: "burger-2.jpg" },
+            { name: "Triple Cheese", seul: "5,50€", menu: "8,50€", img: "burger-3.jpg" },
+            { name: "Le Big", seul: "6,00€", menu: "9,00€", img: "burger-4.jpg" },
+            { name: "Le Giant Maax", seul: "6,00€", menu: "9,00€", img: "burger-5.jpg" },
+            { name: "Le Giant", seul: "5,00€", menu: "8,00€", img: "burger-6.jpg" },
+            { name: "Le 180", seul: "7,00€", menu: "10,00€", img: "burger-7.jpg" },
+            { name: "Le 360", seul: "9,00€", menu: "12,00€", img: "burger-8.jpg" },
+            { name: "Le Chèvre Miel", seul: "6,00€", menu: "8,00€", img: "burger-9.jpg" },
+            { name: "Le Chicken O MAM'S", seul: "12,90€", menu: "14,90€", img: "burger-10.jpg" },
+            { name: "Le O MAM'S", seul: "12,90€", menu: "14,90€", img: "burger-11.jpg" },
+            { name: "La César", seul: "8,00€", menu: "9,00€", img: "salade-1.jpg" }
         ];
 
-        const grid = document.getElementById('burger-grid');
-        if(grid) {
-            grid.innerHTML = burgers.map(b => `
+        const container = document.getElementById('product-grid');
+        if(container) {
+            container.innerHTML = products.map(p => `
                 <div class="card">
-                    <div class="card-img"><img src="images/${b.img}" alt="${b.name}"></div>
+                    <div class="card-img"><img src="images/${p.img}" alt="${p.name}"></div>
                     <div class="card-info">
-                        <h3>${b.name}</h3>
-                        <p class="price">${b.price}</p>
+                        <h3>${p.name}</h3>
+                        <div class="price-box">
+                            <span class="p-seul">Seul : <b>${p.seul}</b></span>
+                            <span class="p-menu">Menu : ${p.menu}</span>
+                        </div>
                     </div>
                 </div>
             `).join('');
