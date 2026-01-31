@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ô MAM'S | Burgers & Street Food Montpellier</title>
+    <title>Ô MAM'S | Burgers & Street Food</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -17,7 +17,7 @@
             left: 0; top: 0; padding: 2.5rem 1.5rem; border-right: 1px solid #222;
             display: flex; flex-direction: column; z-index: 1000;
         }
-        .nav-logo { width: 100%; margin-bottom: 2.5rem; border-radius: 10px; }
+        .nav-logo { width: 100%; margin-bottom: 2.5rem; }
         .nav-links { list-style: none; flex-grow: 1; }
         .nav-links li { margin-bottom: 1.8rem; }
         .nav-links a { 
@@ -49,11 +49,10 @@
         .card-info h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 800; }
         .price { font-size: 1.4rem; font-weight: 900; }
 
-        /* SECTION CARTE (IMAGES DU MENU) */
-        .carte-container { width: 100%; max-width: 900px; margin: 0 auto; }
+        /* SECTION CARTE */
+        .carte-container { width: 100%; max-width: 800px; margin: 0 auto; }
         .carte-img { width: 100%; height: auto; border-radius: 15px; border: 2px solid #222; margin-bottom: 20px; display: block; }
 
-        /* RESPONSIVE MOBILE */
         @media (max-width: 1024px) {
             body { flex-direction: column; }
             nav { width: 100%; height: auto; position: sticky; padding: 1rem; border-right: none; border-bottom: 1px solid #222; flex-direction: row; justify-content: space-between; align-items: center; }
@@ -69,10 +68,10 @@
     <nav>
         <img src="images/logo-mams.pnj.jpg" alt="Ô MAM'S" class="nav-logo">
         <ul class="nav-links">
-            <li><a href="#about"><i class="fas fa-users"></i> Qui sommes-nous ?</a></li>
-            <li><a href="#burgers"><i class="fas fa-hamburger"></i> Nos Burgers</a></li>
-            <li><a href="#carte"><i class="fas fa-file-alt"></i> Ma Carte</a></li>
-            <li><a href="#order"><i class="fas fa-phone-alt"></i> Commander</a></li>
+            <li><a href="#about">Qui sommes-nous ?</a></li>
+            <li><a href="#burgers">Nos Burgers</a></li>
+            <li><a href="#carte">Ma Carte</a></li>
+            <li><a href="#order">Commander</a></li>
         </ul>
         <a href="tel:0745065470" class="btn-nav-call">
             <i class="fas fa-phone-alt"></i> 07 45 06 54 70
@@ -86,7 +85,7 @@
                 <div></div>
             </div>
             <p style="font-size: 1.3rem; line-height: 1.8; color: #ccc; max-width: 800px;">
-                Nous sommes <b>deux frères</b> passionnés par la street food. Animés par l'envie de partager notre vision du burger parfait, nous avons ouvert <b>Ô MAM'S</b> pour offrir des produits généreux, frais et une ambiance familiale au cœur de Montpellier. Chaque recette est le fruit de notre complicité et de notre exigence.
+                Nous sommes deux frères passionnés par la street food. Animés par l'envie de partager notre vision du burger parfait, nous avons décidé d'ouvrir notre premier fast food <b>Ô MAM'S</b>. Nous travaillons chaque jour pour vous proposer des produits frais et généreux dans une ambiance familiale au cœur de Montpellier.
             </p>
         </section>
 
@@ -114,11 +113,11 @@
                 <h2>Commander</h2>
                 <div></div>
             </div>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Appelez-nous directement :</p>
-            <a href="tel:0745065470" style="font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--primary); text-decoration: none; font-weight: 900;">
-                07 45 06 54 70
+            [cite_start]<p style="font-size: 1.2rem; margin-bottom: 2rem;">Contactez-nous directement : [cite: 23]</p>
+            <a href="tel:0745065470" style="font-size: clamp(2rem, 8vw, 4rem); color: var(--primary); text-decoration: none; font-weight: 900;">
+                [cite_start]07 45 06 54 70 [cite: 23]
             </a>
-            <p style="margin-top: 3rem; color: #444; font-weight: 700;">90 RUE DES BOUISSES, 34070 MONTPELLIER</p>
+            [cite_start]<p style="margin-top: 3rem; color: #666;">90 rue des Bouisses, 34070 Montpellier [cite: 38]</p>
         </section>
     </main>
 
