@@ -1,12 +1,12 @@
 <html lang="fr" class="scroll-smooth"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ô MAM'S | Burgers &amp; Street Food</title>
+    <title>Ô MAM'S | Burgers & Street Food</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Oswald:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #82c91e; --bg-dark: #050505; --border-color: rgba(255,255,255,0.08); }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-dark); color: #ffffff; }
@@ -32,25 +32,29 @@
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-white/5 shadow-2xl flex-col p-6 space-y-4">
             <a href="#about" class="flex items-center gap-4 text-neutral-400 font-medium py-2"><iconify-icon icon="solar:history-linear" width="22"></iconify-icon> Notre Histoire</a>
             <a href="#menu" class="flex items-center gap-4 text-neutral-400 font-medium py-2"><iconify-icon icon="solar:book-2-linear" width="22"></iconify-icon> La Carte</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+34070+Montpellier" target="_blank" class="flex items-center gap-4 text-neutral-400 font-medium py-2"><iconify-icon icon="solar:map-point-linear" width="22"></iconify-icon> Nous trouver</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+Montpellier" target="_blank" class="flex items-center gap-4 text-neutral-400 font-medium py-2"><iconify-icon icon="solar:map-point-linear" width="22"></iconify-icon> Nous trouver</a>
+            <a href="https://www.instagram.com/omams34" target="_blank" class="flex items-center gap-4 text-neutral-400 font-medium py-2 text-[#E1306C]"><iconify-icon icon="line-md:instagram" width="22"></iconify-icon> Instagram</a>
         </div>
     </header>
 
     <aside class="hidden lg:flex flex-col fixed top-0 left-0 h-screen w-80 bg-[#050505] border-r border-white/5 p-8 z-40">
-        <div class="mb-10 w-full overflow-hidden flex flex-col items-center">
-            <img src="images/logo-mams.pnj.jpg" alt="Ô MAM'S" class="w-40 h-40 object-contain opacity-90 hover:opacity-100 transition-opacity duration-500">
-            <h1 class="font-display text-2xl font-semibold tracking-tight mt-4">Ô MAM'S</h1>
+        <div class="mb-10 w-full flex flex-col items-center">
+            <img src="images/logo-mams.pnj.jpg" alt="Ô MAM'S" class="w-32 h-32 object-contain opacity-80 hover:opacity-100 transition-opacity duration-500">
+            <h1 class="font-display text-2xl font-semibold tracking-tight mt-4 text-white">Ô MAM'S</h1>
         </div>
 
-        <nav class="flex-1 space-y-1">
-            <a href="#about" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all">
+        <nav class="flex-1 space-y-2">
+            <a href="#about" class="group flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all">
                 <iconify-icon icon="solar:history-linear" width="20" class="group-hover:text-[#82c91e]"></iconify-icon> NOTRE HISTOIRE
             </a>
-            <a href="#menu" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-white bg-white/5 font-semibold border border-white/5">
+            <a href="#menu" class="group flex items-center gap-3 px-4 py-3 rounded-lg text-white bg-white/5 font-semibold border border-white/5">
                 <iconify-icon icon="solar:book-2-linear" width="20" class="text-[#82c91e]"></iconify-icon> LA CARTE
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+34070+Montpellier" target="_blank" class="group flex items-center gap-3 px-4 py-3.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all">
+            <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+Montpellier" target="_blank" class="group flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all">
                 <iconify-icon icon="solar:map-point-linear" width="20" class="group-hover:text-[#82c91e]"></iconify-icon> NOUS TROUVER
+            </a>
+            <a href="https://www.instagram.com/omams34" target="_blank" class="group flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all">
+                <iconify-icon icon="line-md:instagram" width="20" class="group-hover:text-[#E1306C]"></iconify-icon> INSTAGRAM
             </a>
         </nav>
 
@@ -65,12 +69,16 @@
         <div class="relative z-10 px-6 py-24 lg:px-12 lg:py-20 max-w-8xl mx-auto">
             
             <div id="about" class="mb-14 reveal">
-                <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+34070+Montpellier" target="_blank" class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#82c91e]/20 bg-[#82c91e]/5 text-[#82c91e] text-[10px] uppercase tracking-widest font-semibold mb-4 hover:bg-[#82c91e]/20 transition-all">
-                    <iconify-icon icon="solar:map-point-bold"></iconify-icon>
-                    90 rue des Bouisses, Montpellier
-                </a>
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <a href="https://www.google.com/maps/search/?api=1&query=90+rue+des+Bouisses+Montpellier" target="_blank" class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#82c91e]/20 bg-[#82c91e]/5 text-[#82c91e] text-[10px] uppercase tracking-widest font-semibold hover:bg-[#82c91e]/20 transition-all">
+                        <iconify-icon icon="solar:map-point-bold"></iconify-icon> 90 rue des Bouisses, Montpellier
+                    </a>
+                    <a href="https://www.instagram.com/omams34" target="_blank" class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#E1306C]/20 bg-[#E1306C]/5 text-[#E1306C] text-[10px] uppercase tracking-widest font-semibold hover:bg-[#E1306C]/20 transition-all">
+                        <iconify-icon icon="line-md:instagram"></iconify-icon> @omams34
+                    </a>
+                </div>
                 <h2 class="text-4xl lg:text-5xl font-display font-medium uppercase text-white">Nos <span class="text-[#82c91e]">Burgers</span></h2>
-                <p class="mt-4 text-neutral-400 max-w-lg text-sm leading-relaxed">Deux frères passionnés vous accueillent. Produits frais et générosité au rendez-vous.</p>
+                <p class="mt-4 text-neutral-400 max-w-lg text-sm leading-relaxed">Produits frais et générosité. Découvrez nos recettes uniques créées par deux frères passionnés.</p>
             </div>
 
             <div id="menu" class="reveal">
@@ -91,8 +99,8 @@
                 </h3>
                 <div class="h-px w-full bg-white/10 mt-4 mb-10"></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <img src="images/menu-1.jpg" alt="Menu" class="w-full rounded-2xl border border-white/10 shadow-2xl hover:scale-[1.02] transition-transform">
-                    <img src="images/menu-2.jpg" alt="Menu" class="w-full rounded-2xl border border-white/10 shadow-2xl hover:scale-[1.02] transition-transform">
+                    <img src="images/menu-1.jpg" alt="Menu" class="w-full rounded-2xl border border-white/10 shadow-2xl">
+                    <img src="images/menu-2.jpg" alt="Menu" class="w-full rounded-2xl border border-white/10 shadow-2xl">
                 </div>
             </div>
         </div>
