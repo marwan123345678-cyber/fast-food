@@ -6,11 +6,10 @@
     <title>O MAM'S | Burgers Gourmets</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* --- 1. VARIABLES & CHARTE GRAPHIQUE --- */
         :root {
-            --primary-color: #82c91e; /* Le Vert de votre flyer */
-            --bg-dark: #121212;      /* Noir profond */
-            --bg-card: #1e1e1e;      /* Gris foncé pour les cartes */
+            --primary-color: #82c91e; /* Vert citron O MAM'S */
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
             --text-white: #ffffff;
             --text-gray: #b0b0b0;
         }
@@ -28,7 +27,6 @@
             line-height: 1.6;
         }
 
-        /* --- 2. HEADER & NAVIGATION --- */
         header {
             background-color: rgba(0, 0, 0, 0.95);
             padding: 1rem 5%;
@@ -50,7 +48,6 @@
             gap: 10px;
         }
 
-        /* Simulation du logo rond en CSS (en attendant votre image) */
         .logo-circle {
             width: 50px;
             height: 50px;
@@ -76,11 +73,6 @@
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
         }
 
         .btn-order {
@@ -91,182 +83,73 @@
             text-decoration: none;
             font-weight: 800;
             text-transform: uppercase;
-            transition: transform 0.2s;
         }
 
-        .btn-order:hover {
-            transform: scale(1.05);
-            background-color: #ffffff;
-        }
-
-        /* --- 3. HERO SECTION (L'ACCROCHE) --- */
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 4rem 5%;
-            min-height: 80vh;
+            min-height: 70vh;
             background: radial-gradient(circle at center, #2a2a2a 0%, #121212 100%);
             flex-wrap: wrap;
         }
 
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text span {
-            color: var(--primary-color);
-        }
-
-        .hero-text p {
-            color: var(--text-gray);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: right;
-            min-width: 300px;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            /* Animation flottante pour effet "Wow" */
-            animation: float 6s ease-in-out infinite; 
-            border-radius: 20px;
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; }
+        .hero-text span { color: var(--primary-color); }
+        
+        .hero-image { flex: 1; text-align: right; min-width: 300px; }
+        .hero-image img { 
+            max-width: 100%; 
+            border-radius: 20px; 
+            box-shadow: 0 0 20px var(--primary-color);
+            animation: float 6s ease-in-out infinite;
         }
 
         @keyframes float {
-            0% { transform: translatey(0px); }
-            50% { transform: translatey(-20px); }
-            100% { transform: translatey(0px); }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
-        /* --- 4. LA CARTE (GRID SYSTEM COMME KFC) --- */
-        .menu-section {
-            padding: 4rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-transform: uppercase;
-            border-bottom: 3px solid var(--primary-color);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
+        .menu-section { padding: 4rem 5%; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; border-bottom: 3px solid var(--primary-color); display: inline-block; }
 
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            text-align: left;
         }
 
         .product-card {
             background-color: var(--bg-card);
             border-radius: 15px;
             overflow: hidden;
-            transition: transform 0.3s;
-            position: relative;
+            transition: 0.3s;
             border: 1px solid #333;
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-        }
+        .product-card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
 
-        .card-image {
-            height: 250px;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .card-image { height: 250px; background-color: #000; overflow: hidden; }
+        .card-image img { width: 100%; height: 100%; object-fit: cover; }
 
-        .card-content {
-            padding: 1.5rem;
-        }
+        .card-content { padding: 1.5rem; }
+        .card-title { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .card-desc { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 1.5rem; min-height: 80px; }
 
-        .card-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #333; padding-top: 1rem; }
+        .price { font-size: 1.4rem; font-weight: 900; }
+        .btn-add { background-color: var(--text-white); color: black; border: none; padding: 8px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; }
 
-        .card-desc {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            min-height: 80px; /* Aligne les boutons */
-        }
+        footer { background-color: black; padding: 3rem 5%; border-top: 1px solid #333; text-align: center; margin-top: 3rem; }
+        .footer-info p { color: var(--text-gray); margin-bottom: 10px; }
 
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-        }
-
-        .price {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: white;
-        }
-
-        .btn-add {
-            background-color: white;
-            color: black;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-add:hover {
-            background-color: var(--primary-color);
-        }
-
-        /* --- 5. FOOTER PRO --- */
-        footer {
-            background-color: black;
-            padding: 3rem 5%;
-            margin-top: 4rem;
-            border-top: 1px solid #333;
-            text-align: center;
-        }
-        
-        .footer-info p {
-            margin-bottom: 10px;
-            color: var(--text-gray);
-        }
-
-        /* --- MOBILE --- */
         @media (max-width: 768px) {
             .hero-text h1 { font-size: 2.5rem; }
-            .hero { text-align: center; justify-content: center; }
-            .hero-image { display: none; /* On cache la grande image sur mobile pour charger vite, ou on la met en dessous */ }
-            nav ul { display: none; /* Menu burger à faire plus tard, ici on simplifie */ }
+            .hero-image { display: none; }
         }
     </style>
 </head>
@@ -279,68 +162,67 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">La Carte</a></li>
-                <li><a href="#">Nos Restaurants</a></li>
+                <li><a href="#menu">La Carte</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-        <a href="#" class="btn-order">Commander</a>
+        <a href="tel:0745065470" class="btn-order">07 45 06 54 70</a>
     </header>
 
     <section class="hero">
         <div class="hero-text">
-            <h1>LE GOÛT DU <br><span>VRAI BURGER</span></h1>
-            <p>Découvrez nos recettes signatures préparées minute. Steaks du boucher, pain boulanger et sauces maison.</p>
-            <a href="#menu" class="btn-order" style="padding: 15px 40px; font-size: 1.2rem;">VOIR LA CARTE</a>
+            <h1>O MAM'S<br><span>LE VRAI BURGER</span></h1>
+            <p>Le goût de l'authentique : pain boulanger, steak 150g du boucher et sauces maison.</p>
+            <a href="#menu" class="btn-order" style="padding: 15px 40px;">DÉCOUVRIR LA CARTE</a>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Burger Signature O MAMS">
+            <img src="images/le-omams.PNG" alt="Le 180 O MAM'S">
         </div>
     </section>
 
     <section id="menu" class="menu-section">
-        <center><h2 class="section-title">Nos Signatures</h2></center>
+        <h2 class="section-title">Nos Menus Phares</h2>
         
         <div class="menu-grid">
             
             <div class="product-card">
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=60" alt="Le O Mams">
+                    <img src="images/le-omams.PNG" alt="Le O MAM'S">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">LE O MAM'S</h3>
-                    <p class="card-desc">Le boss final. Pain boulanger, steak 150g du boucher, oignons caramélisés, cheddar maturé, salade iceberg, tomates, oignons rouges, cornichon, sauce maison.</p>
+                    <p class="card-desc">Pain boulanger, steak 150g, oignons caramélisés, cheddar maturé, salade iceberg, tomates, oignons rouges, cornichon, sauce maison.</p>
                     <div class="card-footer">
                         <span class="price">12,90 €</span>
-                        <button class="btn-add">AJOUTER</button>
+                        <button class="btn-add">CHOISIR</button>
                     </div>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=60" alt="Double Cheese">
+                    <img src="images/burger-Double cheese.jpg" alt="Double Cheese">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">DOUBLE CHEESE</h3>
-                    <p class="card-desc">Le classique indétrônable. Pain brioché toasté, 2 steaks de 45g smashés, ketchup, moutarde douce, oignons et cornichons.</p>
+                    <p class="card-desc">Le classique gourmand : pain brioché, 2 steaks de 45g, ketchup, moutarde, oignons et cornichons.</p>
                     <div class="card-footer">
                         <span class="price">4,50 €</span>
-                        <button class="btn-add">AJOUTER</button>
+                        <button class="btn-add">CHOISIR</button>
                     </div>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=500&q=60" alt="Le Big">
+                    <img src="images/le-big.jpg" alt="Le Big">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">LE BIG</h3>
-                    <p class="card-desc">L'icône revisitée. Pain moelleux à étages, 2 steaks 45g, cheddar fondant, salade croquante, cornichons et notre sauce Big secrète.</p>
+                    <p class="card-desc">Le mythique : pain moelleux, 2 steaks 45g, cheddar fondant, salade, cornichons et sauce Big maison.</p>
                     <div class="card-footer">
                         <span class="price">6,00 €</span>
-                        <button class="btn-add">AJOUTER</button>
+                        <button class="btn-add">CHOISIR</button>
                     </div>
                 </div>
             </div>
@@ -350,11 +232,10 @@
 
     <footer>
         <div class="footer-info">
-            <h3 style="color:white; margin-bottom:1rem;">O MAM'S</h3>
-            <p>📍 90 Rue des Bouisses</p>
+            <h2 style="color:var(--primary-color); margin-bottom:1rem;">O MAM'S</h2>
+            <p>📍 90 Rue des Bouisses, 34070 Montpellier</p>
             <p>📞 07 45 06 54 70</p>
-            <br>
-            <p>© 2026 O MAM'S - Tous droits réservés</p>
+            <p>© 2026 O MAM'S - Site Web Professionnel</p>
         </div>
     </footer>
 
