@@ -3,88 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ô MAM'S | Carte Officielle</title>
+    <title>Ô MAM'S | Burgers Gourmets Montpellier</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary: #82c91e; --dark: #000; --card-bg: #111; --white: #fff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: var(--white); scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: var(--white); scroll-behavior: smooth; padding-bottom: 60px; }
 
+        /* HEADER */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 5%; background: rgba(0,0,0,0.95);
             position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222;
         }
-        .logo-img { height: 75px; width: auto; object-fit: contain; }
+        .logo-img { height: 75px; width: auto; }
+        .header-actions { display: flex; align-items: center; gap: 15px; }
+        .btn-call { background: var(--primary); color: #000; text-decoration: none; padding: 10px 15px; border-radius: 50px; font-weight: 900; font-size: 0.9rem; }
 
-        .cart-wrapper { position: relative; cursor: pointer; }
-        .cart-count { 
-            position: absolute; top: -5px; right: -10px; background: var(--primary);
-            color: #000; font-size: 0.75rem; font-weight: 900;
-            width: 22px; height: 22px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-        }
-
+        /* HERO */
         .hero {
-            height: 50vh; display: flex; align-items: center; padding: 0 8%;
-            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('images/burger-7.jpg');
+            height: 40vh; display: flex; align-items: center; padding: 0 8%;
+            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url('images/burger-7.jpg');
             background-size: cover; background-position: center;
         }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; }
+        .hero h1 { font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 1; }
         .hero span { color: var(--primary); }
 
-        .menu-container { padding: 4rem 5%; }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 25px; 
-        }
-
-        .card { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid #222; transition: 0.4s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-8px); }
-        .card-img { height: 230px; overflow: hidden; }
-        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .card:hover .card-img img { transform: scale(1.1); }
-
+        /* MENU */
+        .section-title { text-align: center; margin: 4rem 0 2rem; text-transform: uppercase; letter-spacing: 2px; }
+        .section-title h2 { font-size: 2rem; }
+        .section-title div { width: 50px; height: 3px; background: var(--primary); margin: 10px auto; }
+        
+        .menu-container { padding: 0 5% 4rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid #222; }
+        .card-img { height: 220px; overflow: hidden; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
         .card-info { padding: 1.5rem; }
-        .card-info h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 1rem; font-weight: 800; text-transform: uppercase; }
+        .card-info h3 { color: var(--primary); margin-bottom: 1rem; text-transform: uppercase; }
         .price-row { display: flex; justify-content: space-between; align-items: center; }
         .price { font-size: 1.4rem; font-weight: 900; }
-        
-        .add-btn { 
-            background: var(--primary); border: none; width: 40px; height: 40px; 
-            border-radius: 10px; font-weight: bold; cursor: pointer;
+        .add-btn { background: var(--primary); border: none; width: 40px; height: 40px; border-radius: 10px; cursor: pointer; }
+
+        /* AVIS */
+        .reviews-container { padding: 4rem 5%; background: #080808; }
+        .review-card { background: #111; padding: 2rem; border-radius: 15px; margin-bottom: 20px; border-left: 4px solid var(--primary); }
+        .stars { color: #ffc107; margin-bottom: 10px; }
+        .review-text { font-style: italic; color: #ccc; line-height: 1.6; }
+        .review-author { margin-top: 15px; font-weight: 700; color: var(--white); font-size: 0.9rem; }
+
+        /* INFOS & MAPS */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #222; }
+        .info-block { background: var(--dark); padding: 3rem 5%; }
+        .hours-list { list-style: none; margin-top: 20px; }
+        .hours-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #111; font-size: 0.9rem; }
+        .current-day { color: var(--primary); font-weight: 700; }
+
+        .map-iframe { width: 100%; height: 100%; min-height: 400px; border: none; filter: grayscale(1) invert(1); }
+
+        /* MOBILE FIXES */
+        .mobile-call-bar {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; background: var(--primary); padding: 15px; border-radius: 15px;
+            text-align: center; z-index: 2000; color: #000; font-weight: 900; text-decoration: none; display: none;
         }
 
-        footer { padding: 4rem; text-align: center; background: #050505; border-top: 1px solid #111; }
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .mobile-call-bar { display: block; }
+            .header-actions .btn-call { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <img src="images/logo-mams.pnj.jpg" alt="Logo Ô MAM'S" class="logo-img">
-        <div class="cart-wrapper" id="cart">
-            <i class="fas fa-shopping-basket" style="font-size: 1.5rem;"></i>
-            <span class="cart-count" id="count">0</span>
+        <div class="header-actions">
+            <a href="tel:0745065470" class="btn-call"><i class="fas fa-phone"></i> 07 45 06 54 70</a>
+            <div class="cart-wrapper" id="cart" style="position:relative;">
+                <i class="fas fa-shopping-basket" style="font-size: 1.5rem;"></i>
+                <span id="count" style="position:absolute; top:-10px; right:-10px; background:var(--primary); color:#000; border-radius:50%; width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:900;">0</span>
+            </div>
         </div>
     </header>
 
+    <a href="tel:0745065470" class="mobile-call-bar"><i class="fas fa-phone"></i> APPELER POUR COMMANDER</a>
+
     <section class="hero">
         <div>
-            <h1>LA CARTE<br><span>Ô MAM'S</span></h1>
-            <p>Qualité premium, prix imbattables.</p>
+            <h1>BURGERS<br><span>GOURMETS</span></h1>
+            <p>Le goût de la passion à Montpellier.</p>
         </div>
     </section>
 
+    <div class="section-title">
+        <h2>Notre Carte</h2>
+        <div></div>
+    </div>
+
     <main class="menu-container">
-        <div class="grid" id="burger-grid">
-            </div>
+        <div class="grid" id="burger-grid"></div>
     </main>
 
-    <footer>
-        <img src="images/logo-mams.pnj.jpg" alt="Logo" style="height: 60px; margin-bottom: 1rem;"><br>
-        <p>90 RUE DES BOUISSES, 34070 MONTPELLIER</p>
+    <section class="reviews-container">
+        <div class="section-title">
+            <h2>Avis Clients</h2>
+            <p style="color:var(--primary); font-weight:700;">4.9/5 sur Google Maps</p>
+            <div></div>
+        </div>
+        <div class="review-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">"Excellent burgers, produits frais et de qualité. Le personnel est super accueillant. Je recommande les yeux fermés !"</p>
+            <p class="review-author">- Client Satisfait (Google)</p>
+        </div>
+        <div class="review-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">"Le meilleur smash burger du quartier. Les prix sont très corrects pour la qualité proposée."</p>
+            <p class="review-author">- Gourmet Montpellier (Google)</p>
+        </div>
+    </section>
+
+    <section class="info-grid">
+        <div class="info-block">
+            <h3>Horaires</h3>
+            <ul class="hours-list">
+                <li><span>Lundi - Jeudi</span> <span>11:00-14:30, 18:00-22:00</span></li>
+                <li><span>Vendredi</span> <span>18:00-23:00</span></li>
+                <li><span>Samedi</span> <span>12:00-14:30, 18:00-23:00</span></li>
+                <li><span>Dimanche</span> <span>12:00-14:30, 18:00-22:00</span></li>
+            </ul>
+            <p style="margin-top:30px; font-weight:900;"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 90 RUE DES BOUISSES, 34070</p>
+        </div>
+        <div style="height: 100%; min-height: 400px;">
+            <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.332349074811!2d3.8341272765691176!3d43.59655135650204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6af0ec6c6f325%3A0xef286ccd503d4e41!2sO%20MAM&#39;S!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer style="padding:3rem; text-align:center; background:#000;">
+        <img src="images/logo-mams.pnj.jpg" alt="Logo" style="height:50px; opacity:0.5;">
+        <p style="font-size:0.7rem; color:#333; margin-top:20px;">© 2026 Ô MAM'S MONTPELLIER</p>
     </footer>
 
     <script>
@@ -118,8 +178,8 @@
             count++;
             document.getElementById('count').innerText = count;
             const cart = document.getElementById('cart');
-            cart.style.transform = "scale(1.3)";
-            setTimeout(() => { cart.style.transform = "scale(1)"; }, 150);
+            cart.style.transform = "scale(1.2)";
+            setTimeout(() => { cart.style.transform = "scale(1)"; }, 100);
         }
     </script>
 </body>
