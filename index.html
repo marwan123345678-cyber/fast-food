@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ô MAM'S | L'Élite du Burger</title>
+    <title>Ô MAM'S | Montpellier Burger</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -16,26 +16,25 @@
             padding: 1rem 5%; background: rgba(0,0,0,0.95);
             position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222;
         }
-        /* CORRECTION LOGO : Nom exact de ta capture */
         .logo-img { height: 75px; width: auto; object-fit: contain; }
 
-        .cart-wrapper { position: relative; cursor: pointer; transition: 0.3s; }
+        .cart-wrapper { position: relative; cursor: pointer; }
         .cart-count { 
             position: absolute; top: -5px; right: -10px; background: var(--primary);
-            color: #000; font-size: 0.7rem; font-weight: 900;
+            color: #000; font-size: 0.75rem; font-weight: 900;
             width: 22px; height: 22px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
         }
 
         .hero {
-            height: 60vh; display: flex; align-items: center; padding: 0 5%;
-            background: linear-gradient(to right, rgba(0,0,0,0.9), transparent), url('images/burger-1.jpg');
+            height: 50vh; display: flex; align-items: center; padding: 0 8%;
+            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('images/burger-7.jpg');
             background-size: cover; background-position: center;
         }
-        .hero h1 { font-size: 4rem; font-weight: 900; line-height: 1; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; }
         .hero span { color: var(--primary); }
 
-        .menu-container { padding: 5rem 5%; }
+        .menu-container { padding: 4rem 5%; }
         .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
@@ -43,23 +42,22 @@
         }
 
         .card { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid #222; transition: 0.4s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(130, 201, 30, 0.2); }
-        .card-img { height: 240px; overflow: hidden; }
+        .card:hover { border-color: var(--primary); transform: translateY(-8px); }
+        .card-img { height: 230px; overflow: hidden; }
         .card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .card:hover .card-img img { transform: scale(1.1); }
 
         .card-info { padding: 1.5rem; }
-        .card-info h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 800; }
-        .price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
-        .price { font-size: 1.5rem; font-weight: 900; }
+        .card-info h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 1rem; font-weight: 800; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; }
+        .price { font-size: 1.4rem; font-weight: 900; }
         
         .add-btn { 
-            background: var(--primary); border: none; width: 45px; height: 45px; 
-            border-radius: 12px; font-weight: bold; cursor: pointer; transition: 0.2s;
+            background: var(--primary); border: none; width: 40px; height: 40px; 
+            border-radius: 10px; font-weight: bold; cursor: pointer;
         }
-        .add-btn:active { transform: scale(0.8); }
 
-        footer { padding: 4rem; text-align: center; background: #050505; border-top: 1px solid #222; }
+        footer { padding: 4rem; text-align: center; background: #050505; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
@@ -74,55 +72,54 @@
 
     <section class="hero">
         <div>
-            <h1>L'EXPÉRIENCE<br><span>Ô MAM'S</span></h1>
-            <p style="font-size: 1.2rem; margin-top: 1rem; color: #888;">Huit burgers, une seule passion : le goût.</p>
+            <h1>LA CARTE<br><span>OFFICIELLE</span></h1>
+            <p>Le meilleur de Montpellier dans votre assiette.</p>
         </div>
     </section>
 
     <main class="menu-container">
-        <div class="grid">
-            <script>
-                const burgers = [
-                    { name: "LE O MAM'S", price: "12,90€", img: "burger-1.jpg" },
-                    { name: "DOUBLE CHEESE", price: "4,50€", img: "burger-2.jpg" },
-                    { name: "LE BIG", price: "6,00€", img: "burger-3.jpg" },
-                    { name: "LE SMASH", price: "10,50€", img: "burger-4.jpg" },
-                    { name: "LE BACON", price: "11,00€", img: "burger-5.jpg" },
-                    { name: "LE CHICKEN", price: "9,50€", img: "burger-6.jpg" },
-                    { name: "LE VEGGIE", price: "9,00€", img: "burger-7.jpg" },
-                    { name: "L'AVOCADO", price: "13,50€", img: "burger-8.jpg" }
-                ];
-
-                document.write(burgers.map(b => `
-                    <div class="card">
-                        <div class="card-img"><img src="images/${b.img}" alt="${b.name}"></div>
-                        <div class="card-info">
-                            <h3>${b.name}</h3>
-                            <div class="price-row">
-                                <span class="price">${b.price}</span>
-                                <button class="add-btn" onclick="addToCart()">+</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join(''));
-            </script>
-        </div>
+        <div class="grid" id="burger-grid">
+            </div>
     </main>
 
     <footer>
         <img src="images/logo-mams.pnj.jpg" alt="Logo" style="height: 60px; margin-bottom: 1rem;"><br>
         <p>90 RUE DES BOUISSES, 34070 MONTPELLIER</p>
-        <p style="margin-top: 1rem; color: #444;">© 2026 Ô MAM'S</p>
     </footer>
 
     <script>
+        const burgers = [
+            { name: "Cheese Burger", price: "4,00€", img: "burger-1.jpg" },
+            { name: "Double Cheese Burger", price: "5,50€", img: "burger-2.jpg" },
+            { name: "Triple Cheese Burger", price: "7,00€", img: "burger-3.jpg" },
+            { name: "Le Big", price: "6,50€", img: "burger-4.jpg" },
+            { name: "Le Giant Maax", price: "12,90€", img: "burger-5.jpg" },
+            { name: "Le Giant", price: "9,50€", img: "burger-6.jpg" },
+            { name: "Le 180", price: "10,90€", img: "burger-7.jpg" },
+            { name: "Le 360", price: "14,90€", img: "burger-8.jpg" }
+        ];
+
+        const grid = document.getElementById('burger-grid');
+        grid.innerHTML = burgers.map(b => `
+            <div class="card">
+                <div class="card-img"><img src="images/${b.img}" alt="${b.name}"></div>
+                <div class="card-info">
+                    <h3>${b.name}</h3>
+                    <div class="price-row">
+                        <span class="price">${b.price}</span>
+                        <button class="add-btn" onclick="addToCart()"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
         let count = 0;
         function addToCart() {
             count++;
             document.getElementById('count').innerText = count;
             const cart = document.getElementById('cart');
-            cart.style.transform = "rotate(15deg) scale(1.3)";
-            setTimeout(() => { cart.style.transform = "rotate(0deg) scale(1)"; }, 150);
+            cart.style.transform = "scale(1.3)";
+            setTimeout(() => { cart.style.transform = "scale(1)"; }, 150);
         }
     </script>
 </body>
